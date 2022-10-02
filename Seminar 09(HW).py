@@ -28,7 +28,34 @@
 # Однако "словарь my_dict,  состоящий всего из одного элемента «first_one» со значением «we can do it»" - вот это для меня непонятно,
 # что имелось ввиду, и как этот элемент использовать в коде.
 
-def biggest_dict(**my_dict):
-        print(my_dict)
+# def biggest_dict(**my_dict):
+#         print(my_dict)
 
-biggest_dict(fruit1='Яблоко', fruit2='Апельсин', fruit3='Мандарин')
+# biggest_dict(fruit1='Яблоко', fruit2='Апельсин', fruit3='Мандарин')
+#-----------------------------------------------------------------
+
+# 3. Дана строка в виде случайной последовательности чисел от 0 до 9.
+# Требуется создать словарь, который в качестве ключей будет принимать данные числа (т. е. ключи будут типом int), 
+# а в качестве значений – количество этих чисел в имеющейся последовательности. Для построения словаря создайте функцию count_it(sequence), 
+# принимающую строку из цифр. Функция должна возвратить словарь из 3-х самых часто встречаемых чисел.
+
+# Нашел в интернете вот такую интересную вещь: применение Counter из модуля collections...
+
+from collections import Counter
+
+
+def count_it(sequence):
+    return dict(Counter([int(num) for num in sequence]).most_common(3))
+
+def rand_list(n): 
+    # Моя любимая функция для генерации случайных списков (ничего не могу с собой поделать)
+    from random import randint
+    some_list=[]
+    for i in range(n):
+        some_list.append(randint(0,10))
+    return some_list
+
+new_str=''.join(map(str,(rand_list(15))))
+
+print(new_str)
+print(count_it(new_str))
