@@ -5,16 +5,17 @@
 # Может я чего-то не понимаю, но я ума не приложу, для чего в данном случае нужно создавать отдельную функцию для создания словаря.
 # Как вариант, предлагаю функцию создания случайных числовых списков.
 
-def rand_list(n): 
-    from random import randint
-    some_list=[]
-    for i in range(n):
-        some_list.append(randint(1,10))
-    return some_list
+# def rand_list(n): 
+#     from random import randint
+#     some_list=[]
+#     for i in range(n):
+#         some_list.append(randint(1,10))
+#     return some_list
 
-k=int(input('Количество элементов для списка: '))
-new_list=rand_list(k)
-my_dictionary={num: num for num in new_list}
+# k=int(input('Количество элементов для списка: '))
+# new_list=rand_list(k)
+# my_dictionary={num: num for num in new_list}
 
-print(my_dictionary)
+# print(my_dictionary)
+#-----------------------------------------------------------------
 
